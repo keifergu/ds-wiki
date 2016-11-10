@@ -1,28 +1,43 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <mt-header title="Don't Strave">
+      <mt-button
+        @click.native="changeMenu"
+        icon="more"
+        slot="left"></mt-button>
+    </mt-header>
+    <mt-popup
+      v-model="menuStatus"
+      position="left"
+      >
+      <router-link
+        @click.native="changeMenu"
+        to="/home">
+        Home
+      </router-link>
+      <br>
+      <router-link
+        @click.native="changeMenu"
+        to="/animals">
+        Animals
+      </router-link>
+    </mt-popup>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello';
-
 export default {
   name: 'app',
-  components: {
-    Hello,
+  data() {
+    return {
+      menuStatus: false,
+    };
+  },
+  methods: {
+    changeMenu() {
+      this.menuStatus = !this.menuStatus;
+    },
   },
 };
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
