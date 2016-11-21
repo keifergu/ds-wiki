@@ -1,8 +1,10 @@
 <template>
+<div>
   <router-link :to="link">
     <img :src="src">
     <p>{{name}}</p>
   </router-link>
+</div>
 </template>
 
 <script>

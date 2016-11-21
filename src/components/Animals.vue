@@ -2,8 +2,8 @@
 <div>
   <animal-icon
     v-for="animal in allAnimals"
-    :name="animal.name"
     :src="animal.src"
+    :name="animal.name"
     :link="animal.link"
     >
   </animal-icon>
@@ -14,11 +14,19 @@
 
 import AnimalIcon from './AnimalIcon';
 
+const animalsUri = '/static/animals/';
+const animalsLink = '/animals/';
+
 const info = [
   {
     name: '猪人',
-    src: '/static/animals/pigman.png',
-    link: '/animals/pigman',
+    src: animalsUri.concat('pigman.png'),
+    link: animalsLink.concat('pigman'),
+  },
+  {
+    name: '猪人守卫',
+    src: animalsUri.concat('pigguard.png'),
+    link: animalsLink.concat('pigguard'),
   },
 ];
 

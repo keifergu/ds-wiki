@@ -16,6 +16,12 @@ const info = {
     damage: 33,
     speed: 3,
   },
+  pigguard: {
+    name: '猪人守卫',
+    health: 300,
+    damage: 33,
+    speed: 3,
+  },
 };
 
 export default {
