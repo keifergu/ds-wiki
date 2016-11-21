@@ -35,3 +35,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+a:link {
+  text-decoration: none;
+}
+</style>

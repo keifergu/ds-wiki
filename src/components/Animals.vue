@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="animals">
   <animal-icon
     v-for="animal in allAnimals"
     :src="animal.src"
@@ -40,3 +40,8 @@ export default {
   components: { AnimalIcon },
 };
 </script>
+
+<style scoped>
+.animals {
+}
+</style>
