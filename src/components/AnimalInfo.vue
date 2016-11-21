@@ -8,12 +8,22 @@
 </template>
 
 <script>
+
+const info = {
+  pigman: {
+    name: '猪人',
+    health: 250,
+    damage: 33,
+    speed: 3,
+  },
+};
+
 export default {
   name: 'animalInfo',
-  props: {
-    animal: {
-      type: Object,
-    },
+  data() {
+    return {
+      animal: info[this.$route.params.name],
+    };
   },
 };
 </script>

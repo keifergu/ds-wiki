@@ -1,23 +1,24 @@
 <template>
 <div>
-  <animal-info
+  <animal-icon
     v-for="animal in allAnimals"
-    :animal="animal"
+    :name="animal.name"
+    :src="animal.src"
+    :link="animal.link"
     >
-  </animal-info>
+  </animal-icon>
 </div>
 </template>
 
 <script>
 
-import AnimalInfo from './AnimalInfo';
+import AnimalIcon from './AnimalIcon';
 
 const info = [
   {
     name: '猪人',
-    health: 250,
-    damage: 33,
-    speed: 3,
+    src: '/static/animals/pigman.png',
+    link: '/animals/pigman',
   },
 ];
 
@@ -28,6 +29,6 @@ export default {
       allAnimals: info,
     };
   },
-  components: { AnimalInfo },
+  components: { AnimalIcon },
 };
 </script>
